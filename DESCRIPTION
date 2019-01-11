@@ -1,0 +1,15 @@
+Package: SATAtools
+Title: Tools for SATA (Sistema de Alertas Tempranas del Sistema Nacional de Monitoreo de Bosques del Ecuador)
+Version: 0.9
+Authors@R: c(person("Fabian","Santos",email = "fabian_santos_@hotmail.com", role = c("aut", "cre")),person("Ximena","Herrera",email = "ximena.herrera@ambiente.gob.ec",role = "ctb"),person("Karen","Rodriguez",email =  "karen.rodriguez@ambiente.gob.ec",role = "ctb"))
+Description: Tools for facilitate SATA alerts management. It works with outputs from GEE (Google Earth Engine) pre-processing scripts for ts (time series) creation and alerts of SATA (as shapefile). Includes tools for create validation plots, alerts filtering and change detection.
+License: GPL-3
+URL: https://github.com/FSantosCodes
+Imports: rgdal,raster,sp,foreach,doParallel,lubridate,rgeos,scales,ggplot2,changepoint,gtools,plyr
+Depends: R (>= 3.5.1)
+RoxygenNote: 6.1.1
+Packaged: 2019-01-07
+Author: Fabian Santos [aut, cre]
+Maintainer: Fabian Santos <fabian_santos_@hotmail.com>
+Repository: GitHub
+Publication: 2019-01-07
