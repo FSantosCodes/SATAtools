@@ -59,7 +59,7 @@ filter_deforestation_alerts(spatial_units_shp = spatial_units_shp,
                             output_folder = output_folder)
 ```
 
-esta otras con la base del MODIS y VIRRS:
+esta otras con la base del MODIS:
 
 ```
 #Defining variables from spatial units shapefile
@@ -91,11 +91,43 @@ filter_MODIS_alerts(spatial_units_shp = spatial_units_shp,
                     output_folder = output_folder)
 ```
 
+## Validación de alertas
 
+Usando un shapefile de las alertas y sus fechas, la rutina toma cada alerta (coodenadas, fecha) y grafica usando la serie temporal generada con las rutinas del GEE. Estos graficos nos permiten evaluar el comportamiento de las alertas y observar la evidencia que se idenfico como cambio. 
 
-## Deployment
+```
+#Defining variables for alerts shapefile
+alerts_shp <- "C:/DATA/GAF/demo/estadisticas/MODIS_alerts.shp"
+column_dates_name <- "date"
 
-Add additional notes about how to deploy this on a live system
+#Defining variables for GEE ts files (normally as a TIF). Take into account that should exist in the same folder its version as CSV (dates files)
+red_channel_GEE_ts <- "C:/DATA/GAF/demo/sentinel1/gee_outputs/coca_S1_ts_VV_P50_I14.tif"
+green_channel_GEE_ts <- "C:/DATA/GAF/demo/sentinel1/gee_outputs/coca_S1_ts_VH_P50_I14.tif"
+blue_channel_GEE_ts <- "C:/DATA/GAF/demo/sentinel1/gee_outputs/coca_S1_ts_VV_P50_I14.tif"
+
+#other variables required
+observations_evaluate <- 5 #could be less if processing is slow
+buffer_distance <- 500 #consider that is in meters and measured from the alert point
+stretch_perc <- 5 #recommendable if plots do not have good contrast
+size_jpg <- 1000 #plot is based in an square, so one dimension defines its size
+ncores <- 3 #modify if your resources are less than this
+
+#output folder to save plots
+output_folder <- "C:/DATA/GAF/demo/test"
+
+#running the function
+validate_alerts(alerts_shp = alerts_shp,
+                column_dates_name = column_dates_name,
+                red_channel_GEE_ts = red_channel_GEE_ts,
+                green_channel_GEE_ts = green_channel_GEE_ts,
+                blue_channel_GEE_ts = blue_channel_GEE_ts,
+                observations_evaluate = observations_evaluate,
+                buffer_distance = buffer_distance,
+                stretch_perc = stretch_perc,
+                size_jpg = size_jpg,
+                ncores = ncores,
+                output_folder = output_folder)
+```
 
 ## Built With
 
