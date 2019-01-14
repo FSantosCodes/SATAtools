@@ -182,6 +182,7 @@ detect_breakpoints(GEE_ts = GEE_ts,
                    output_folder = output_folder)
 
 ```
+![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/changes.jpg)
 
 ## Contribuciones
 
