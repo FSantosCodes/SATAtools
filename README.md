@@ -64,7 +64,7 @@ filter_deforestation_alerts(spatial_units_shp = spatial_units_shp,
                             size_jpg = size_jpg,
                             output_folder = output_folder)
 ```
-![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/boxplots.jpg)
+![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/boxplot.jpg)
 
 aquí se lo hace con las alertas de incendios del MODIS:
 
@@ -97,7 +97,7 @@ filter_MODIS_alerts(spatial_units_shp = spatial_units_shp,
                     size_jpg = size_jpg,
                     output_folder = output_folder)
 ```
-![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/boxplots2.jpg)
+![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/boxplot2.jpg)
 
 ## Validación de alertas
 
