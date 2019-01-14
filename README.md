@@ -183,7 +183,7 @@ Por favor revíse el  [DESCRIPTION](https://github.com/FSantosCodes/SATAtools/bl
 
 ## Licencia
 
-Este proyecto tiene licencia GNU-3 (General Public License v3.0) - mire el [LICENSE.md](LICENSE.md) para más detalles.
+Este proyecto tiene licencia GNU-3 (General Public License v3.0) - mire el link (https://www.gnu.org/licenses/gpl-3.0.en.html) para más detalles.
 
 ## Agradecimientos
 
