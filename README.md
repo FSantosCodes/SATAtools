@@ -97,6 +97,7 @@ filter_MODIS_alerts(spatial_units_shp = spatial_units_shp,
                     size_jpg = size_jpg,
                     output_folder = output_folder)
 ```
+![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/boxplots2.jpg)
 
 ## Validación de alertas
 
@@ -135,6 +136,8 @@ validate_alerts(alerts_shp = alerts_shp,
                 ncores = ncores,
                 output_folder = output_folder)
 ```
+![alt text](https://github.com/FSantosCodes/SATAtools/blob/master/validation.jpg)
+
 ## Detección de cambios
 Ejecución de rutinas de deteccion de cambios a partir de series temporales del GEE. La función calcula cambios en el promedio de la serie temporal estandarizada. El output que genera es un shapefile filtrado por área y fecha de cambio. Requiere que el OSGEO4W este previamente instalado.
 
