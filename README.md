@@ -25,7 +25,7 @@ y la siguiente instala el SATAtools:
 install_github("FSantosCodes/SATAtools")
 library(SATAtools)
 ```
-Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son los que constituyen esta muestra.
+Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son los que constituyen esta muestra de los potenciales usos de esta herramienta.
 
 ### Installing
 
