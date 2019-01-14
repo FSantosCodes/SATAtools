@@ -25,7 +25,7 @@ y la siguiente instala el SATAtools:
 install_github("FSantosCodes/SATAtools")
 library(SATAtools)
 ```
-Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son los que constituyen esta muestra de los potenciales usos de esta herramienta. Las rutinas de GEE se muestran a continuación:
+Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son una muestra de los potenciales usos de esta herramienta. Las rutinas de GEE se muestran a continuación:
 - Landsat 4-8 compositing
 https://code.earthengine.google.com/6a2c42cdbebe701dd8f3b31287da29c7
 - Sentinel 1 compositing
