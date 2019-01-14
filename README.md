@@ -175,20 +175,16 @@ detect_breakpoints(GEE_ts = GEE_ts,
 
 ## Contribuciones
 
-Por favor revíse el  [DESCRIPTION](https://gist.github.com/PurpleBooth/b24679402957c63ec426) para detalles de la implementación del SATAtools.
+Por favor revíse el  [DESCRIPTION](https://github.com/FSantosCodes/SATAtools/blob/master/DESCRIPTION) para detalles sobre la implementación del SATAtools.
 
 ## Autores
 
 * **Fabián Santos** - *Programación y concepto* - (https://github.com/PurpleBooth)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
+## Licencia
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Agradecimientos
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* GAFAG, Ministerio del Ambiente, KFW, ZFL.
