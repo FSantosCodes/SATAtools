@@ -35,7 +35,7 @@ https://code.earthengine.google.com/612a604f0baf41581d225f4e8b2b06c0
 
 ### Filtrado de alertas
 
-Las coberturas usadas en estos ejemplos usan las bases de detección de deforestacion del SATA:
+Las coberturas usadas en estos ejemplos usan las alertas de deforestacion del SATA:
 
 ```
 ##### FILTER DEFORESTATION #####
@@ -65,7 +65,7 @@ filter_deforestation_alerts(spatial_units_shp = spatial_units_shp,
                             output_folder = output_folder)
 ```
 
-esta otra con la base del MODIS:
+aquí se lo hace con las alertas de incendios del MODIS:
 
 ```
 #Defining variables from spatial units shapefile
@@ -99,7 +99,7 @@ filter_MODIS_alerts(spatial_units_shp = spatial_units_shp,
 
 ## Validación de alertas
 
-Usando un shapefile de las alertas y sus fechas, la rutina toma cada alerta (coodenadas, fecha) y grafica usando la serie temporal generada con las rutinas del GEE. Estos graficos nos permiten evaluar el comportamiento de las alertas y observar la evidencia que se idenfico como cambio. 
+Usando un shapefile de las alertas y sus fechas, esta rutina toma cada alerta (coodenadas, fecha) y la grafica usando la serie temporal generada con las rutinas del GEE. Estos graficos nos permiten evaluar el comportamiento antes/después de la alerta y observar la evidencia con que el algoritmo detectó el cambio. 
 
 ```
 #Defining variables for alerts shapefile
@@ -135,7 +135,7 @@ validate_alerts(alerts_shp = alerts_shp,
                 output_folder = output_folder)
 ```
 ## Detección de cambios
-Ejecución de rutinas de deteccion de cambios a partir de series temporales del GEE. La función calcula cambios en el promedio de la senal temporal. El output que genera es un shapefile filtrado por tamanio de parche y fecha de cambio. Requiere que el OSGEO4W este previamente instalado.
+Ejecución de rutinas de deteccion de cambios a partir de series temporales del GEE. La función calcula cambios en el promedio de la serie temporal estandarizada. El output que genera es un shapefile filtrado por área y fecha de cambio. Requiere que el OSGEO4W este previamente instalado.
 
 ##### DETECT BREAKPOINTS #####
 
