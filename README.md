@@ -59,7 +59,7 @@ filter_deforestation_alerts(spatial_units_shp = spatial_units_shp,
                             output_folder = output_folder)
 ```
 
-esta otras con la base del MODIS:
+esta otra con la base del MODIS:
 
 ```
 #Defining variables from spatial units shapefile
@@ -128,16 +128,54 @@ validate_alerts(alerts_shp = alerts_shp,
                 ncores = ncores,
                 output_folder = output_folder)
 ```
+## Detección de cambios
+Ejecución de rutinas de deteccion de cambios a partir de series temporales del GEE. La función calcula cambios en el promedio de la senal temporal. El output que genera es un shapefile filtrado por tamanio de parche y fecha de cambio. Requiere que el OSGEO4W este previamente instalado.
 
-## Built With
+##### DETECT BREAKPOINTS #####
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+##Defining variables for breakpoint detection
+GEE_ts <- "C:/DATA/GAF/demo/sentinel1/gee_outputs/coca_S1_ts_VH_P50_I14.tif"
+change_threshold <- 10
+segment_size <- 3
+min_area <- 4
 
-## Contributing
+#For calibration mode
+samples_shp <- "C:/DATA/GAF/demo/sentinel1/samples/muestras.shp"
+column_id_name <- "clase"
+size_jpg <- 3000
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+#Variables for processing and outputs
+ncores <- 3
+output_folder <- "C:/DATA/GAF/demo/sentinel1/breakpoints"
+
+#running the function in CALIBRATION mode
+detect_breakpoints(GEE_ts = GEE_ts,
+                   change_threshold = change_threshold,
+                   segment_size = segment_size,
+                   min_area = min_area,
+                   calibration_mode = T,
+                   samples_shp = samples_shp,
+                   column_id_name = column_id_name,
+                   size_jpg = size_jpg,
+                   ncores = ncores,
+                   output_folder = output_folder)
+
+#running the function in PROCESSING mode
+detect_breakpoints(GEE_ts = GEE_ts,
+                   change_threshold = change_threshold,
+                   segment_size = segment_size,
+                   min_area = min_area,
+                   calibration_mode = F,
+                   column_id_name = column_id_name,
+                   ncores = ncores,
+                   output_folder = output_folder)
+
+```
+
+## Contribuciones
+
+Por favor revíse el  [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
