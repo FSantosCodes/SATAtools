@@ -27,43 +27,71 @@ library(SATAtools)
 ```
 Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son los que constituyen esta muestra de los potenciales usos de esta herramienta.
 
-### Installing
+### Filtrado de alertas
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Las coberturas usadas en estos ejemplos usan las bases de detección de deforestacion del SATA:
 
 ```
-Give the example
+##### FILTER DEFORESTATION #####
+
+#Defining variables from spatial units shapefile
+spatial_units_shp <- "C:/DATA/GAF/demo/shp/unidades_espaciales/provincias.shp"
+column_units_name <- "dpa_despro" #case sensitive
+
+#Defining variables from deforestation shapefile (output from SATA or 'detect_breakpoints' function)
+deforestation_shp <- "C:/DATA/GAF/demo/shp/alertas/deforestation_2016_2017.shp"
+column_date_name <- "inicio" #case sensitive
+column_area_name <- "Ã¡rea" #case sensitive
+min_area <- NA #with same units as area column but here ignored
+
+#Defining variables of ouputs
+size_jpg <- c(40,20) #first value defines width and second height
+output_folder <- "C:/DATA/GAF/demo/estadisticas"
+
+#running the function
+filter_deforestation_alerts(spatial_units_shp = spatial_units_shp,
+                            column_units_name = column_units_name,
+                            deforestation_shp = deforestation_shp,
+                            column_date_name = column_date_name,
+                            column_area_name = column_area_name,
+                            min_area = min_area,
+                            size_jpg = size_jpg,
+                            output_folder = output_folder)
 ```
 
-And repeat
+esta otras con la base del MODIS y VIRRS:
 
 ```
-until finished
+#Defining variables from spatial units shapefile
+spatial_units_shp <- "C:/DATA/GAF/demo/shp/unidades_espaciales/provincias.shp"
+column_units_name <- "dpa_despro" #case sensitive
+
+#Defining variables from MODIS shapefile
+MODIS_shp <- "C:/DATA/GAF/demo/shp/alertas/pts_calor_MODIS_30d.shp"
+column_date_name <- "acq_date" #case sensitive
+column_frp_name <- "frp" #case sensitive
+column_confidence_name <- "confidence" #case sensitive
+min_frp <- 10 #with same units as area column
+min_confidence <- 50 #with same units as area column
+
+#Defining variables of ouputs
+size_jpg <- c(40,20) #first value defines width and second height
+output_folder <- "C:/DATA/GAF/demo/estadisticas"
+
+#running the function
+filter_MODIS_alerts(spatial_units_shp = spatial_units_shp,
+                    column_units_name = column_units_name,
+                    MODIS_shp = MODIS_shp,
+                    column_date_name = column_date_name,
+                    column_frp_name = column_frp_name,
+                    column_confidence_name = column_confidence_name,
+                    min_frp = min_frp,
+                    min_confidence = min_confidence,
+                    size_jpg = size_jpg,
+                    output_folder = output_folder)
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
