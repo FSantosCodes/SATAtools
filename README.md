@@ -179,11 +179,11 @@ Por favor revíse el  [DESCRIPTION](https://github.com/FSantosCodes/SATAtools/bl
 
 ## Autores
 
-* **Fabián Santos** - *Programación y concepto* - (https://github.com/PurpleBooth)
+* **Fabián Santos** - *Programación y concepto* - (https://www.researchgate.net/profile/Fabian_Santos2)
 
 ## Licencia
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Este proyecto tiene licencia GNU-3 (General Public License v3.0) - mire el [LICENSE.md](LICENSE.md) para más detalles.
 
 ## Agradecimientos
 
