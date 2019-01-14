@@ -64,6 +64,7 @@ filter_deforestation_alerts(spatial_units_shp = spatial_units_shp,
                             size_jpg = size_jpg,
                             output_folder = output_folder)
 ```
+![alt text](http://url/to/img.png)
 
 aquí se lo hace con las alertas de incendios del MODIS:
 
