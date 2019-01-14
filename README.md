@@ -5,14 +5,27 @@ Tools for SATA (Sistema de Alertas Tempranas del Sistema Nacional de Monitoreo d
 ## Instalación
 
 Para instalar la librería, es necesario instalar otras dependencias y tener la última version del OSGEO4W. Con esto se ejecutan las primeras líneas para la instalación:
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
 ```
-Give examples
+#install required libraries
+check.libs <- c("rgdal","raster","sp","foreach","doParallel",
+                "lubridate","rgeos","scales","ggplot2","changepoint",
+                "gtools","plyr","devtools","rlang")
+get.libraries <- function(libraries){
+  for (i in libraries){
+    if(!require(i,character.only=T)){
+      install.packages(i)
+      library(i,character.only=T)}
+  }
+}
+get.libraries(check.libs)
 ```
+y la siguiente instala el SATAtools:
+```
+#install SATAtools
+install_github("FSantosCodes/SATAtools")
+library(SATAtools)
+```
+Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son los que constituyen esta muestra.
 
 ### Installing
 
