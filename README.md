@@ -47,8 +47,8 @@ column_units_name <- "dpa_despro" #case sensitive
 #Defining variables from deforestation shapefile (output from SATA or 'detect_breakpoints' function)
 deforestation_shp <- "C:/DATA/GAF/demo/shp/alertas/deforestation_2016_2017.shp"
 column_date_name <- "inicio" #case sensitive
-column_area_name <- "Ã¡rea" #case sensitive
-min_area <- NA #with same units as area column but here ignored
+column_area_name <- "area" #case sensitive
+min_area <- NA #minimun area to filter (same units as area)
 
 #Defining variables of ouputs
 size_jpg <- c(40,20) #first value defines width and second height
@@ -78,8 +78,8 @@ MODIS_shp <- "C:/DATA/GAF/demo/shp/alertas/pts_calor_MODIS_30d.shp"
 column_date_name <- "acq_date" #case sensitive
 column_frp_name <- "frp" #case sensitive
 column_confidence_name <- "confidence" #case sensitive
-min_frp <- 10 #with same units as area column
-min_confidence <- 50 #with same units as area column
+min_frp <- 10 #same units as frp
+min_confidence <- 50 #same units as confidence
 
 #Defining variables of ouputs
 size_jpg <- c(40,20) #first value defines width and second height
