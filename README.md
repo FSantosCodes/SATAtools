@@ -6,7 +6,7 @@ Tools for SATA (Sistema de Alertas Tempranas del Sistema Nacional de Monitoreo d
 
 Para instalar el SATAtools, es necesario una version del R >=3.5.1 (se asume que esta usando el R desde RStudio), la librería 'devtools' de R (si no la tiene) y el OSGEO4W. Para hacerlo siga los pasos:
 
-(1) Instalación del OSGEO4W:
+(1) Instalación del OSGEO4W (Descargue y ejecute el instalador. Mantenga la configuración de la instalación por defecto):
 ```
 #install 32 bits version for windows:
 http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86.exe
