@@ -4,25 +4,42 @@ Tools for SATA (Sistema de Alertas Tempranas del Sistema Nacional de Monitoreo d
 
 ## Instalación
 
-Para instalar la librería, es necesario instalar otras dependencias y tener la última version del OSGEO4W. Con esto se ejecutan las primeras líneas para la instalación:
+Para instalar el SATAtools, es necesario una version del R >=3.5.1 (se asume que esta usando el R desde RStudio), la librería 'devtools' de R (si no la tiene) y el OSGEO4W. Para hacerlo siga los pasos:
+
+(1) Instalación del OSGEO4W:
 ```
-#install required libraries
-check.libs <- c("rgdal","raster","sp","foreach","doParallel",
-                "lubridate","rgeos","scales","ggplot2","changepoint",
-                "gtools","plyr","devtools","rlang")
-get.libraries <- function(libraries){
-  for (i in libraries){
-    if(!require(i,character.only=T)){
-      install.packages(i)
-      library(i,character.only=T)}
-  }
-}
-get.libraries(check.libs)
+#install 32 bits version for windows:
+http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86.exe
+#install 64 bits version for windows:
+http://download.osgeo.org/osgeo4w/osgeo4w-setup-x86_64.exe
 ```
-y la siguiente instala el SATAtools:
+(2) Revisar que la version del R sea >=3.5.1 (caso contrario tiene que actualizarla):
 ```
+#execute in Rstudio console:
+> version
+               _                           
+platform       x86_64-w64-mingw32          
+arch           x86_64                      
+os             mingw32                     
+system         x86_64, mingw32             
+status                                     
+major          3                           
+minor          5.2                         
+year           2018                        
+month          12                          
+day            20                          
+svn rev        75870                       
+language       R                           
+version.string R version 3.5.2 (2018-12-20)   <--- ok
+nickname       Eggshell Igloo              
+```
+(3) e instalar el 'devtools' y el 'SATAtools':
+```
+#install devtools
+install.packages(devtools)
+library(devtools)
 #install SATAtools
-install_github("FSantosCodes/SATAtools")
+install_github('FSantosCodes/SATAtools')
 library(SATAtools)
 ```
 Los ejemplos que se muestran a continuación se basan en los resultados de la descarga de los algoritmos corridos en el GEE. El pos-procesamiento de estos son una muestra de los potenciales usos de esta herramienta. Las rutinas de GEE se muestran a continuación:
